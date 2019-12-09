@@ -1,0 +1,39 @@
+extends layout
+
+block content
+
+    
+    form(method="post" action='/ships/append')
+        h1 append the table:
+        br
+        input(type='submit', value='Append')
+        br
+
+    #showdata
+        if (data)
+            table(style='width:100%', border='1')
+                thead
+                    tr
+                        th ID
+                        th Navn
+                        th Hjemhavn
+                        th Unikt MMSI_nummer
+                        th Anvendelse
+                        th BRT/BT
+                        th Længde
+                        th Maks_antal_om_bord
+                tbody
+                    each val in data
+                        tr
+                            td #{val.ID}
+                            td #{val.Navn}
+                            td #{val.Hjemhavn}
+                            td #{val.Unikt_MMSI_nummer}
+                            td #{val.Anvendelse}
+                            td #{val.BRT_BT}
+                            td #{val.Laengde}
+                            td #{val.Maks_antal_om_bord}
+                            
+
+
+                  
